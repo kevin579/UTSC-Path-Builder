@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTSC Path Builder - Course Rating</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/course_rating.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/page_style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/request_style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' , filename = 'images/favicon.png') }}">
+
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div>
+        <h1>Course Rating Finder</h1>
+        <p class="introduction">Enter the course code, and you can find ratings and other details about the course.</p>
+    </div>
+    
+    <main>
+        <div class="search-container">
+            <h2>Search for Courses</h2>
+            <form id="course-search-form">
+                <input type="text" id="course-input" placeholder="Enter course code (e.g. CSCA08)" autocomplete="off" required>
+                <button type="submit" id="search-button">Search</button>
+                <div id="suggestions-container"></div>
+            </form>
+            <p id="search-result" class="result-message"></p>
+        </div>
+
+        <div id="course-details-container"></div>
+        <div id="text-message"></div>
+        <div class="selector-container" id = "feedback-container"style = "display:none">
+            <form id="course-feedback-selector">
+              <fieldset>
+                <div>
+                    <label for="review">Review</label>
+                    <input type="range" id="review" name="review" min="0" max="5" value="0">
+                    <output id="reviewValue">0</output>
+                </div>
+                <div>
+                    <label for="recommend">Recommend</label>
+                    <input type="range" id="recommend" name="recommend" min="0" max="5" value="0">
+                    <output id="recommendValue">0</output>
+                </div>
+                <div>
+                    <label for="workload">Workload</label>
+                    <input type="range" id="workload" name="workload" min="0" max="5" value="0">
+                    <output id="workloadValue">0</output>
+                </div>
+                <div>
+                  <label for="quality">Quality</label>
+                  <input type="range" id="quality" name="quality" min="0" max="5" value="0">
+                  <output id="qualityValue">0</output>
+                </div>
+                <div>
+                  <label for="difficulty">Difficulty</label>
+                  <input type="range" id="difficulty" name="difficulty" min="0" max="5" value="0">
+                  <output id="difficultyValue">0</output>
+                </div>
+                <div>
+                  <button type="submit">Submit</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+    </main>
+
+    <script>
+      const userCourses = JSON.parse('{{ courses | tojson | safe }}');
+    </script>
+    <script src="{{url_for('static', filename = 'js/course_data.js')}}"></script>
+    <script src="{{url_for('static', filename = 'js/course_search.js')}}"></script>
+    <script>
+        // Update output elements when sliders are adjusted
+        const sliders = document.querySelectorAll('input[type="range"]');
+        sliders.forEach(slider => {
+          const output = document.getElementById(slider.id + 'Value');
+          slider.addEventListener('input', () => {
+            output.textContent = slider.value;
+          });
+        });
+        const tolerance = document.getElementById('tolerance');
+        const output = document.getElementById('toleranceValue');
+        tolerance.addEventListener('input', () => {
+          output.textContent = "0." + tolerance.value.toString();
+        });
+      </script>
+</body>
+</html>

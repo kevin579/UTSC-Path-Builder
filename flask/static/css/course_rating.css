@@ -1,0 +1,145 @@
+
+
+/* MAIN CONTENT */
+body > div:not(.search-container) {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #002A5C;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.introduction {
+    line-height: 1.5;
+    color: #333;
+    margin: 5px 0;
+    text-align: left;
+}
+
+br {
+    display: none;
+}
+
+/* SEARCH SECTION */
+.search-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.search-container input[type="text"] {
+    width: 300px;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.search-container input[type="text"]:focus {
+    border-color: #002A5C;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,42,92,0.1);
+}
+
+#search-button {
+    background-color: #00204E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 10px;
+}
+
+#search-button:hover {
+    background-color: #003d82;
+}
+
+#loading {
+    text-align: center;
+    padding: 10px;
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+#course-details-container {
+    display: none; /* initially hidden */
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#course-details-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#course-details-container table, th, td {
+    border: 1px solid #ddd;
+}
+
+#course-details-container th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+#course-details-container th {
+    background-color: #f7f7f7;
+}
+
+/* SEARCH SUGGESTIONS */
+#course-search-form {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+#suggestions-container {
+    position: fixed;
+    transform: translateX(15.5%);
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+}
+
+.suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+#text-message {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    text-align: center; /* Centers inline text */
+}

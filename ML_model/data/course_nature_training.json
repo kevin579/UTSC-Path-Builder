@@ -1,0 +1,162 @@
+{
+    "CSCA08H3": {
+        "name": "Introduction to Computer Science I",
+        "CoPr": {"Conceptual": 40, "Practical": 60},
+        "AnCr": {"Analytical": 80, "Creative": 20},
+        "InCo": {"Individual": 90, "Collaborative": 10},
+        "RiFl": {"Rigid": 80, "Flexible": 20},
+        "NtLi": {"Quantitative": 80, "Qualitative": 20}
+    },
+    "CSCA20H3": {
+        "name": "Introduction to Programming",
+        "CoPr": {"Conceptual": 20, "Practical": 80},
+        "AnCr": {"Analytical": 80, "Creative": 20},
+        "InCo": {"Individual": 60, "Collaborative": 40},
+        "RiFl": {"Rigid": 50, "Flexible": 50},
+        "NtLi": {"Quantitative": 70, "Qualitative": 30}
+    },
+    "CSCA67H3": {
+        "name": "Discrete Mathematics",
+        "CoPr": {"Conceptual": 70, "Practical": 30},
+        "AnCr": {"Analytical": 95, "Creative": 5},
+        "InCo": {"Individual": 80, "Collaborative": 20},
+        "RiFl": {"Rigid": 70, "Flexible": 30},
+        "NtLi": {"Quantitative": 90, "Qualitative": 10}
+    },
+    "MATA31H3": {
+        "name": "Calculus I for Mathematical Sciences",
+        "CoPr": {"Conceptual": 90, "Practical": 10},
+        "AnCr": {"Analytical": 95, "Creative": 5},
+        "InCo": {"Individual": 80, "Collaborative": 20},
+        "RiFl": {"Rigid": 80, "Flexible": 20},
+        "NtLi": {"Quantitative": 100, "Qualitative": 0}
+    },
+    "PHYA10H3": {
+        "name": "Physics I for the Physical Sciences",
+        "CoPr": {"Conceptual": 80, "Practical": 20},
+        "AnCr": {"Analytical": 90, "Creative": 10},
+        "InCo": {"Individual": 60, "Collaborative": 40},
+        "RiFl": {"Rigid": 70, "Flexible": 30},
+        "NtLi": {"Quantitative": 95, "Qualitative": 5}
+    },
+    "ASTC25H3": {
+        "name": "Astrophysics of Planetary Systems",
+        "CoPr": {"Conceptual": 70, "Practical": 30},
+        "AnCr": {"Analytical": 80, "Creative": 20},
+        "InCo": {"Individual": 50, "Collaborative": 50},
+        "RiFl": {"Rigid": 60, "Flexible": 40},
+        "NtLi": {"Quantitative": 85, "Qualitative": 15}
+    },
+    "BIOA01H3": {
+        "name": "Life on Earth: Unifying Principles",
+        "CoPr": {"Conceptual": 60, "Practical": 40},
+        "AnCr": {"Analytical": 70, "Creative": 30},
+        "InCo": {"Individual": 50, "Collaborative": 50},
+        "RiFl": {"Rigid": 50, "Flexible": 50},
+        "NtLi": {"Quantitative": 60, "Qualitative": 40}
+    },
+    "BIOB11H3": {
+        "name": "Molecular Aspects of Cellular and Genetic Processes",
+        "CoPr": {"Conceptual": 50, "Practical": 50},
+        "AnCr": {"Analytical": 75, "Creative": 25},
+        "InCo": {"Individual": 40, "Collaborative": 60},
+        "RiFl": {"Rigid": 60, "Flexible": 40},
+        "NtLi": {"Quantitative": 70, "Qualitative": 30}
+    },
+    "CHMB41H3": {
+        "name": "Organic Chemistry I",
+        "CoPr": {"Conceptual": 70, "Practical": 30},
+        "AnCr": {"Analytical": 85, "Creative": 15},
+        "InCo": {"Individual": 60, "Collaborative": 40},
+        "RiFl": {"Rigid": 70, "Flexible": 30},
+        "NtLi": {"Quantitative": 90, "Qualitative": 10}
+    },
+    "PHYA21H3": {
+        "name": "Physics II for the Physical Sciences",
+        "CoPr": {"Conceptual": 80, "Practical": 20},
+        "AnCr": {"Analytical": 90, "Creative": 10},
+        "InCo": {"Individual": 50, "Collaborative": 50},
+        "RiFl": {"Rigid": 70, "Flexible": 30},
+        "NtLi": {"Quantitative": 95, "Qualitative": 5}
+    },
+    "CSCB09H3": {
+        "name": "Software Tools and Systems Programming",
+        "CoPr": {"Conceptual": 60, "Practical": 40},
+        "AnCr": {"Analytical": 90, "Creative": 10},
+        "InCo": {"Individual": 70, "Collaborative": 30},
+        "RiFl": {"Rigid": 60, "Flexible": 40},
+        "NtLi": {"Quantitative": 85, "Qualitative": 15}
+    },
+    "ASTB23H3": {
+        "name": "Astrophysics of Stars, Galaxies and the Universe",
+        "CoPr": {"Conceptual": 70, "Practical": 30},
+        "AnCr": {"Analytical": 80, "Creative": 20},
+        "InCo": {"Individual": 50, "Collaborative": 50},
+        "RiFl": {"Rigid": 60, "Flexible": 40},
+        "NtLi": {"Quantitative": 90, "Qualitative": 10}
+    },
+    "PSYB10H3": {
+        "name": "Introduction to Social Psychology",
+        "CoPr": {"Conceptual": 50, "Practical": 50},
+        "AnCr": {"Analytical": 70, "Creative": 30},
+        "InCo": {"Individual": 60, "Collaborative": 40},
+        "RiFl": {"Rigid": 40, "Flexible": 60},
+        "NtLi": {"Quantitative": 50, "Qualitative": 50}
+    },
+    "MGHB02H3": {
+        "name": "Managing People and Groups in Organizations",
+        "CoPr": {"Conceptual": 40, "Practical": 60},
+        "AnCr": {"Analytical": 60, "Creative": 40},
+        "InCo": {"Individual": 30, "Collaborative": 70},
+        "RiFl": {"Rigid": 30, "Flexible": 70},
+        "NtLi": {"Quantitative": 50, "Qualitative": 50}
+    },
+    "HISB03H3": {
+        "name": "Critical Writing and Research for Historians",
+        "CoPr": {"Conceptual": 60, "Practical": 40},
+        "AnCr": {"Analytical": 50, "Creative": 50},
+        "InCo": {"Individual": 70, "Collaborative": 30},
+        "RiFl": {"Rigid": 40, "Flexible": 60},
+        "NtLi": {"Quantitative": 20, "Qualitative": 80}
+    },
+    "SOCC11H3": {
+        "name": "Policing and Security",
+        "CoPr": {"Conceptual": 50, "Practical": 50},
+        "AnCr": {"Analytical": 60, "Creative": 40},
+        "InCo": {"Individual": 50, "Collaborative": 50},
+        "RiFl": {"Rigid": 30, "Flexible": 70},
+        "NtLi": {"Quantitative": 30, "Qualitative": 70}
+    },
+    "CSCC01H3": {
+        "name": "Introduction to Software Engineering",
+        "CoPr": {"Conceptual": 40, "Practical": 60},
+        "AnCr": {"Analytical": 50, "Creative": 50},
+        "InCo": {"Individual": 30, "Collaborative": 70},
+        "RiFl": {"Rigid": 30, "Flexible": 70},
+        "NtLi": {"Quantitative": 40, "Qualitative": 60}
+    },
+    "EESC30H3": {
+        "name": "Environmental Microbiology",
+        "CoPr": {"Conceptual": 50, "Practical": 50},
+        "AnCr": {"Analytical": 70, "Creative": 30},
+        "InCo": {"Individual": 40, "Collaborative": 60},
+        "RiFl": {"Rigid": 50, "Flexible": 50},
+        "NtLi": {"Quantitative": 60, "Qualitative": 40}
+    },
+    "CITC18H3": {
+        "name": "Urban Transportation Policy Analysis",
+        "CoPr": {"Conceptual": 40, "Practical": 60},
+        "AnCr": {"Analytical": 50, "Creative": 50},
+        "InCo": {"Individual": 30, "Collaborative": 70},
+        "RiFl": {"Rigid": 30, "Flexible": 70},
+        "NtLi": {"Quantitative": 40, "Qualitative": 60}
+    },
+    "PHLC92H3": {
+        "name": "Political Philosophy",
+        "CoPr": {"Conceptual": 90, "Practical": 10},
+        "AnCr": {"Analytical": 70, "Creative": 30},
+        "InCo": {"Individual": 80, "Collaborative": 20},
+        "RiFl": {"Rigid": 40, "Flexible": 60},
+        "NtLi": {"Quantitative": 10, "Qualitative": 90}
+    }
+}

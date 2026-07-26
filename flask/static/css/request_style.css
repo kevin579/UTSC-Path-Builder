@@ -1,0 +1,96 @@
+
+
+h1 {
+  color: #002A5C;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.introduction {
+  line-height: 1.5;
+  color: #333;
+  margin: 5px 0; /* Reduced margin between introduction lines */
+  text-align: left;
+}
+
+body > div:not(.selector-container):not(.search-container) {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+
+.selector-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 1rem;
+}
+
+/* Fieldset & Legend */
+.selector-container fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.selector-container div {
+  margin-bottom: 15px;
+}
+
+
+.selector-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Input Text Fields */
+.selector-container input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+.selector-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Range Sliders & Output */
+.selector-container input[type="range"] {
+  width: calc(100% - 50px);
+  vertical-align: middle;
+}
+
+.selector-container output {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+/* Submit Button */
+.selector-container button {
+  background-color: #00204E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.selector-container button:hover {
+  background-color: #003366;
+}

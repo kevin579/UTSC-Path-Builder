@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTSC Path Builder</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename = 'css/page_style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' , filename = 'images/favicon.png') }}">
+
+    <style>
+        .main-content {
+            display: flex;
+            margin: 20px;
+            max-width: 1800px;
+            margin: 20px auto;
+        }
+        
+        .sidebar {
+            width: 400px;
+            background-color: #f0f0f0;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-right: 40px;
+        }
+        
+        .content-area {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .navigation-title {
+            text-align: center;
+            color: #002a5c;
+            font-size: 28px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #002a5c;
+            padding-bottom: 10px;
+        }
+        
+        .toc {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 25px;
+            transition: transform 0.2s;
+        }
+        
+        .toc li:hover {
+            transform: translateX(5px);
+        }
+        
+        .toc-item {
+            display: block;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .toc-title {
+            display: block;
+            color: #002a5c;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .toc-description {
+            display: block;
+            color: #555;
+            font-size: 16px;
+        }
+        
+        .welcome-section {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .welcome-title {
+            color: #002a5c;
+            font-size: 36px;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        
+        .welcome-subtitle {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #444;
+        }
+        
+        .section-title {
+            color: #002a5c;
+            font-size: 28px;
+            border-left: 5px solid #002a5c;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-list {
+            padding-left: 25px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+        
+        .steps-list {
+            counter-reset: steps;
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .steps-list li {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            font-size: 17px;
+        }
+        
+        .steps-list li:before {
+            counter-increment: steps;
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #002a5c;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .help-note {
+            background-color: #e8f4ff;
+            padding: 15px 20px;
+            border-left: 4px solid #0066cc;
+            border-radius: 0 8px 8px 0;
+            margin-top: 30px;
+        }
+        body > div:not(.search-container) {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'header.html' %}
+
+    <div class="main-content">
+        <div class="sidebar">
+            <h3 class="navigation-title">Navigation</h3>
+            <ul class="toc">
+                <li>
+                    <a href="{{ url_for('portfolio') }}" class="toc-item">
+                        <span class="toc-title">My Courses</span>
+                        <span class="toc-description">View and manage your current and completed courses.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('course_preq') }}" class="toc-item">
+                        <span class="toc-title">Course Prerequisites</span>
+                        <span class="toc-description">Explore course prerequisites to plan your academic journey.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('program') }}" class="toc-item">
+                        <span class="toc-title">Program Requirements</span>
+                        <span class="toc-description">Check the requirements for your degree program.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('rating') }}" class="toc-item">
+                        <span class="toc-title">Course Rating</span>
+                        <span class="toc-description">See how other students have rated courses at UTSC, and rate it yourself</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('course_feedback') }}" class="toc-item">
+                        <span class="toc-title">Course Feedback</span>
+                        <span class="toc-description">Contribute feedback about your courses to provide better course recommendations.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('course_recommend') }}" class="toc-item">
+                        <span class="toc-title">Course Recommendation</span>
+                        <span class="toc-description">Get personalized course recommendations based on your academic path.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('login') }}" class="toc-item">
+                        <span class="toc-title">Log In</span>
+                        <span class="toc-description">Access your personal account and saved information.</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="content-area">
+            <div class="welcome-section">
+                <h1 class="welcome-title">Welcome to UTSC Path Builder</h1>
+                <p class="welcome-subtitle">We will help you plan out your academic pathway at the University of Toronto Scarborough Campus!</p>
+                
+                <h2 class="section-title">About This Tool</h2>
+                <p>UTSC Path Builder is designed to simplify your academic planning process. Our interactive tools help you:</p>
+                <ul class="feature-list">
+                    <li>Track your completed and planned courses</li>
+                    <li>Understand complex course prerequisites</li>
+                    <li>Verify program requirements for graduation</li>
+                    <li>Make informed decisions based on peer ratings and feedback</li>
+                    <li>Rate a course that you had taken before</li>
+
+                    <li>Discover new courses that align with your interests and career goals</li>
+                </ul>
+                
+                <h2 class="section-title">Getting Started</h2>
+                <p>To begin planning your academic journey:</p>
+                <ul class="steps-list">
+                    <li>Log in to your account to access personalized features</li>
+                    <li>Add your completed courses to "My Courses"</li>
+                    <li>Explore course prerequisites for subjects you're interested in</li>
+                    <li>Check program requirements to ensure you're on track to graduate</li>
+
+
+                </ul>
+                
+                <div class="help-note">
+                    <p>Need help? Feel free to contact the UTSC Academic Advising Centre for additional support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

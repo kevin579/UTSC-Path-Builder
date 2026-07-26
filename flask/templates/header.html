@@ -1,0 +1,18 @@
+<header class="page-header">
+    
+    <img src="{{ url_for('static' , filename = 'images/uoft-logo.png') }}" alt="UofT Logo" class="logo">
+    <!-- <h2>UTSC Path Builder</h2> -->
+    <a href="{{ url_for('index') }}"  style="text-decoration:none;color:white ;"><h2>UTSC Path Builder</h2></a>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('portfolio') }}">My courses</a></li>
+            <li><a href="{{ url_for('course_preq') }}">Course Prerequisites</a></li>
+            <li><a href="{{ url_for('program') }}">Program Requirements</a></li>
+            <li><a href="{{ url_for('rating') }}">Course Rating</a></li>
+            <li><a href="{{ url_for('course_feedback') }}">Course Analyse</a></li>
+            <li><a href="{{ url_for('course_recommend') }}">Course recommendation</a></li>
+            <li><a href="{{ url_for('login') }}">Log in</a></li>
+        </ul>
+    </nav>
+</header>

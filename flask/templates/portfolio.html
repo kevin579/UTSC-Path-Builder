@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
+  <link rel="stylesheet" href="{{url_for('static',filename = 'css/page_style.css')}}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static' , filename = 'images/favicon.png') }}">
+
+</head>
+<body>
+  {% include 'header.html' %}
+
+  <div class="course-container">
+    <div class="courses-list">
+      <h1>Your Courses</h1>
+      <ul>
+        {% for course in courses %}
+          <li>{{ course }}</li>
+        {% else %}
+          <li>No courses found.</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="update-courses">
+      <h2>Update Courses</h2>
+      <form method="POST" action="/portfolio">
+        <input type="text" id = "course-code" name="course_code" placeholder="Enter course code" autocomplete="off" required>
+        <button type="submit" name="add">Add Course</button>
+        <button type="submit" name="remove">Remove Course</button>
+        <div id = "suggestions-container"></div>
+      </form>
+    </div>
+  </div>
+  <script src="{{url_for('static', filename = 'js/portfolio.js')}}"></script>
+  <script src="{{url_for('static',filename='js/course_data.js')}}"></script>
+</body>
+</html>

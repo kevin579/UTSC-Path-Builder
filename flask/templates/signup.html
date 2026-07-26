@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename = 'css/login.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename = 'css/page_style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' , filename = 'images/favicon.png') }}">
+
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Welcome to UTSC Path Builder</h1>
+        </div>
+        <form id="loginForm" method='POST' onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" id="user" name="user" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Please enter your password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Please re-enter your password</label>
+                <input type="password" id="password2" name="password2" required>
+                
+            </div>
+            <button type="submit"style = "margin-bottom:20px">Sign up</button>
+            <div class="error-message" id="passwordError">Your paasword does not match</div>
+            <div class="error-message" id="userError">The user already exist</div>
+            <div class="success-message" id="successMessage">User Created!</div>
+        </form>
+
+    </div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();  // Prevent the form from submitting the traditional way
+            // Show the loading image
+            const user = document.getElementById("user").value;
+            const password = document.getElementById("password").value;
+            const password2 = document.getElementById("password2").value;
+            const successMessage = document.getElementById("successMessage");
+            const errorMessage = document.getElementById("passwordError");
+            const errorMessage2 = document.getElementById("userError");
+            // Use AJAX to submit the form
+            const formData = new FormData();
+            formData.append('email', user);
+            formData.append('password', password);
+            formData.append('password2', password2);
+            fetch("/signup", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status ==1) {
+                    errorMessage.style.display = "block";
+                    errorMessage2.style.display = "none";
+                    successMessage.style.display = "none";
+                }
+                else if(data.status ==2){
+                    successMessage.style.display = "block";
+                    errorMessage.style.display = "none";
+                    errorMessage2.style.display = "none";
+
+                    setTimeout(() => {
+                        window.location.href = "/login";  // Redirect to login page
+                    }, 500);
+                }
+                else if(data.status ==3){
+                    errorMessage2.style.display = "block";
+                    errorMessage.style.display = "none";
+                    successMessage.style.display = "none";
+                }
+                return response.text();
+            })
+            .then(html => {
+                console.log("Form submitted successfully");
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!--front page with search bar-->
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTSC Path Builder</title>
+
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/page_style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/tree_style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' , filename = 'images/favicon.png') }}">
+
+
+</head>
+<body>
+    {% include 'header.html' %}
+    <div>
+        <h1>Course Prerequisite Searcher</h1>
+        <p class = "introduction"> By Entering a course code, you can receive all possible pre-requisite course combinations of your course.</p>
+        <br>
+        <p class = "introduction"> If a group of courses is surronded by a <span style = "color:blue">Blue</span> box, then you can click on the blue box to switch prerequisite sets</p>
+        <br>
+        <p class = "introduction"> If a group of courses is surronded by a <span style = "color:rgb(169, 169, 3)">Yellow</span> box, then that is the only possible prerequisite set. </p>
+        <br>
+        <p class = "introduction"> You must satisfy all conditions and complete all courses in the white boxs, and take the corresponding next level courses indicated on the top of there box</p>
+        <br>
+        <p class = "introduction"> After Logging in, you can visualize the courses that you already taken, which is surronded by <span style = "color:green">Green</span>. </p>
+    </div>
+
+    <div class="search-container">
+        <div id = "prereq-search-form">
+            <input type="text" id="course-code" placeholder="Enter course code (e.g. CSCA08H3)" autocomplete="off">
+            <button id="search-button">Search</button>
+            <div id = "suggestions-container"></div>
+        </div>
+        <div id="loading" style="display: none;">Loading...</div>
+        <div id="prerequisite-tree"></div>
+    </div>
+    <script>
+        const userCourses = JSON.parse('{{ courses | tojson | safe }}');
+    </script>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+    <script src="{{url_for('static',filename='js/prerequisite_tree.js')}}"></script>
+    <script src="{{url_for('static',filename='js/course_data.js')}}"></script>
+</body>
+</html>
+

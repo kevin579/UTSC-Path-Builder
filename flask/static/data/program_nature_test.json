@@ -1,0 +1,93 @@
+{
+    "Computer Science": {
+      "Conceptual": 70, "Practical": 30,
+      "Analytical": 90, "Creative": 10,
+      "Individual": 60, "Collaborative": 40,
+      "Rigid": 50, "Flexible": 50,
+      "Quantitative": 95, "Qualitative": 5
+    },
+    "Mathematics": {
+      "Conceptual": 90, "Practical": 10,
+      "Analytical": 90, "Creative": 10,
+      "Individual": 70, "Collaborative": 30,
+      "Rigid": 60, "Flexible": 40,
+      "Quantitative": 100, "Qualitative": 0
+    },
+    "Physics": {
+      "Conceptual": 80, "Practical": 20,
+      "Analytical": 90, "Creative": 10,
+      "Individual": 50, "Collaborative": 50,
+      "Rigid": 70, "Flexible": 30,
+      "Quantitative": 95, "Qualitative": 5
+    },
+    "Biology": {
+      "Conceptual": 60, "Practical": 40,
+      "Analytical": 80, "Creative": 20,
+      "Individual": 40, "Collaborative": 60,
+      "Rigid": 50, "Flexible": 50,
+      "Quantitative": 70, "Qualitative": 30
+    },
+    "Chemistry": {
+      "Conceptual": 70, "Practical": 30,
+      "Analytical": 85, "Creative": 15,
+      "Individual": 50, "Collaborative": 50,
+      "Rigid": 60, "Flexible": 40,
+      "Quantitative": 90, "Qualitative": 10
+    },
+    "Psychology": {
+      "Conceptual": 50, "Practical": 50,
+      "Analytical": 70, "Creative": 30,
+      "Individual": 60, "Collaborative": 40,
+      "Rigid": 40, "Flexible": 60,
+      "Quantitative": 50, "Qualitative": 50
+    },
+    "Management": {
+      "Conceptual": 40, "Practical": 60,
+      "Analytical": 60, "Creative": 40,
+      "Individual": 30, "Collaborative": 70,
+      "Rigid": 30, "Flexible": 70,
+      "Quantitative": 60, "Qualitative": 40
+    },
+    "History": {
+      "Conceptual": 60, "Practical": 40,
+      "Analytical": 50, "Creative": 50,
+      "Individual": 70, "Collaborative": 30,
+      "Rigid": 40, "Flexible": 60,
+      "Quantitative": 20, "Qualitative": 80
+    },
+    "Sociology": {
+      "Conceptual": 50, "Practical": 50,
+      "Analytical": 60, "Creative": 40,
+      "Individual": 50, "Collaborative": 50,
+      "Rigid": 30, "Flexible": 70,
+      "Quantitative": 30, "Qualitative": 70
+    },
+    "Environmental Science": {
+      "Conceptual": 50, "Practical": 50,
+      "Analytical": 70, "Creative": 30,
+      "Individual": 40, "Collaborative": 60,
+      "Rigid": 50, "Flexible": 50,
+      "Quantitative": 60, "Qualitative": 40
+    },
+    "City Studies": {
+      "Conceptual": 40, "Practical": 60,
+      "Analytical": 50, "Creative": 50,
+      "Individual": 30, "Collaborative": 70,
+      "Rigid": 30, "Flexible": 70,
+      "Quantitative": 40, "Qualitative": 60
+    },
+    "Philosophy": {
+      "Conceptual": 90, "Practical": 10,
+      "Analytical": 70, "Creative": 30,
+      "Individual": 80, "Collaborative": 20,
+      "Rigid": 40, "Flexible": 60,
+      "Quantitative": 10, "Qualitative": 90
+    },
+    "Politics": {
+      "Conceptual": 60, "Practical": 40,
+      "Analytical": 70, "Creative": 30,
+      "Individual": 50, "Collaborative": 50,
+      "Rigid": 40, "Flexible": 60,
+      "Quantitative": 30, "Qualitative": 70
+    }
+  }

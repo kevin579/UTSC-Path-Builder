@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTSC Course Feedback</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/course_feedback.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/page_style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' , filename = 'images/favicon.png') }}">
+
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="container">
+        <h2>UTSC Course Feedback</h2>
+        <p>This page is used to train our course request-recommend model to provide more accurate recommendations, please help us if you have time and would like to try it. </p>
+        <p>If you would like to provide a rating for a course, pleaes go to course rating page</p>
+        <label for="courseSearch">Search for a Course:</label>
+        <input type="text" id="courseSearch" placeholder="Enter course code..." autocomplete="off">
+        <div id="suggestions-container"></div>
+        
+        <div id="feedbackForm" style="display:none;">
+            <h3>Rate <span id="selectedCourse" style="color: #007bff;"></span></h3>
+            
+            <div class="slider-container">
+                <div class="label-container left">
+                    <span class="label-title">Conceptual</span>
+                    <span class="perc-value" id="conceptualValue">50%</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" id="conceptual" oninput="updateSlider('conceptual')" step="5">
+                <div class="label-container right">
+                    <span class="label-title">Practical</span>
+                    <span class="perc-value" id="practicalValue">50%</span>
+                </div>
+            </div>
+            
+            <div class="slider-container">
+                <div class="label-container left">
+                    <span class="label-title">Analytical</span>
+                    <span class="perc-value" id="analyticalValue">50%</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" id="analytical" oninput="updateSlider('analytical')" step="5">
+                <div class="label-container right">
+                    <span class="label-title">Creative</span>
+                    <span class="perc-value" id="creativeValue">50%</span>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <div class="label-container left">
+                    <span class="label-title">Individual</span>
+                    <span class="perc-value" id="individualValue">50%</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" id="individual" oninput="updateSlider('individual')" step="5">
+                <div class="label-container right">
+                    <span class="label-title">Collaborative</span>
+                    <span class="perc-value" id="collaborativeValue">50%</span>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <div class="label-container left">
+                    <span class="label-title">Rigid</span>
+                    <span class="perc-value" id="rigidValue">50%</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" id="rigid" oninput="updateSlider('rigid')" step="5">
+                <div class="label-container right">
+                    <span class="label-title">Flexible</span>
+                    <span class="perc-value" id="flexibleValue">50%</span>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <div class="label-container left">
+                    <span class="label-title">Quantitative</span>
+                    <span class="perc-value" id="quantitativeValue">50%</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" id="quantitative" oninput="updateSlider('quantitative')" step="5">
+                <div class="label-container right">
+                    <span class="label-title">Qualitative</span>
+                    <span class="perc-value" id="qualitativeValue">50%</span>
+                </div>
+            </div>
+
+            <button onclick="submitFeedback()">Submit</button>
+        </div>
+    </div>
+
+    <script src="{{url_for('static',filename='js/course_data.js')}}"></script>
+    <script src="{{url_for('static',filename='js/course_feedback.js')}}"></script>
+</body>
+</html>

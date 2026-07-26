@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTSC Path Builder - Program Search</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/page_style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' , filename = 'images/favicon.png') }}">
+
+</head>
+<body>
+    {% include 'header.html' %}
+    <div>
+        <h1>Program Researcher</h1>
+        <p class = "introduction"> By your program name, and you can find the link towards the detial page of your required program.</p>
+    </div>
+    <main>
+            <div class = "search-container">
+                <h2>Search for Your Program</h2>
+                <form id="program-search-form">
+                    <input type="text" id="program-input" placeholder="Enter your program name" autocomplete="off" required>
+                    <button id="search-button">Search</button>
+                    <div id="suggestions-container"></div>
+                </form>
+                <p id="program-url" class="result-message"></p>
+            </div>    
+    </main>
+
+    <script src="{{url_for('static', filename = 'js/program_search.js')}}"></script>
+    <script src="{{url_for('static', filename = 'js/program_data.js')}}"></script>
+</body>
+</html>

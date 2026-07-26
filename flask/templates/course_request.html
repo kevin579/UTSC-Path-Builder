@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Priority Selector</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/request_style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename = 'css/page_style.css')}}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static' , filename = 'images/favicon.png') }}">
+
+</head>
+<body>
+  {% include 'header.html' %}
+    
+    <div>
+        <h1>Course Priority Selector</h1>
+        <p class="introduction"></p>
+    </div>
+
+
+  <div class="selector-container">
+    <form id="course-priority-selector" onsubmit="handleSubmit(event)">
+      <fieldset>
+        <div>
+          <label for="program">Program Choice</label>
+          <input type="text" id="program" name="program" placeholder="Enter your program name" autocomplete="off">
+        </div>
+        <div>
+          <input type="checkbox" id="prepared" name="prepared">
+          <label for="prepared">Can immediately take (All prerequisites already satisfied)</label>
+        </div>
+        <div>
+          <label for="quality">Quality</label>
+          <input type="range" id="quality" name="quality" min="0" max="5" value="3">
+          <output id="qualityValue">3</output>
+        </div>
+        <div>
+          <label for="difficulty">Difficulty</label>
+          <input type="range" id="difficulty" name="difficulty" min="0" max="5" value="3">
+          <output id="difficultyValue">3</output>
+        </div>
+        <div>
+          <label for="workload">Workload</label>
+          <input type="range" id="workload" name="workload" min="0" max="5" value="3">
+          <output id="workloadValue">3</output>
+        </div>
+        <div>
+          <label for="relativity">Relativity</label>
+          <input type="range" id="relativity" name="relativity" min="0" max="5" value="3">
+          <output id="relativityValue">3</output>
+        </div>
+        <div>
+          <label for="tolerance">Tolerance</label>
+          <input type="range" id="tolerance" name="tolerance" min="0" max="9" value="5">
+          <output id="toleranceValue">0.5</output>
+        </div>
+
+        <div>
+          <button type="submit">Look For Course</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <script src = "{{url_for('static',filename = 'js/course_data.js')}}"></script>
+  <script src = "{{url_for('static',filename = 'js/course_recommend.js')}}"></script>
+  
+  <script>
+    // Update output elements when sliders are adjusted
+    const sliders = document.querySelectorAll('input[type="range"]');
+    sliders.forEach(slider => {
+      const output = document.getElementById(slider.id + 'Value');
+      slider.addEventListener('input', () => {
+        output.textContent = slider.value;
+      });
+    });
+    const tolerance = document.getElementById('tolerance');
+    const output = document.getElementById('toleranceValue');
+    tolerance.addEventListener('input', () => {
+      output.textContent = "0." + tolerance.value.toString();
+    });
+  </script>
+</body>
+</html>

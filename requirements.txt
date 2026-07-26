@@ -1,0 +1,7 @@
+Flask
+flask_cors
+mysql-connector-python
+bcrypt
+sshtunnel
+requests
+python-dotenv

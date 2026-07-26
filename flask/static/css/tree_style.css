@@ -1,0 +1,107 @@
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    user-select: none;
+    transform-origin: top center;
+    transform: scale(1); /* Scale down the entire tree */
+}
+
+.node {
+    padding: 8px 16px; /* Reduced padding */
+    margin: 3px; /* Reduced margin */
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 90px; /* Reduced min-width */
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    font-size: 0.9rem; /* Slightly smaller font */
+}
+
+.children {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Reduced gap */
+    margin-top: 15px; /* Reduced margin */
+    position: relative;
+}
+
+.tree > .node > .children {
+    flex-direction: column;
+    align-items: center;
+}
+
+.tree > .node > .children .children {
+    flex-direction: row;
+}
+
+.children::before {
+    content: '';
+    position: absolute;
+    top: -15px; /* Adjusted for new spacing */
+    left: 50%;
+    height: 15px;
+    border-left: 2px solid #ccc;
+}
+
+.tree > .node > .children::before {
+    height: 100%;
+    top: -8px;
+}
+
+.tree > .node > .children > .node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15px; /* Reduced length of connecting line */
+    width: 15px;
+    border-top: 2px solid #ccc;
+}
+
+.node.blue {
+    background-color: #e6f2ff;
+    border-color: #0066cc;
+    cursor: pointer;
+}
+
+.node.blue:hover {
+    background-color: #cce3ff;
+    box-shadow: 0 0 6px rgba(0, 102, 204, 0.3);
+    transform: translateY(-1px);
+}
+
+.node.yellow {
+    background-color: #fffde6;
+    border-color: #919600;
+}
+
+.node.green {
+    background-color: #e6ffe8;
+    border-color: #00960f;
+}
+
+.node.black {
+    background-color: white;
+    border-color: #666;
+}
+
+.set-counter {
+    position: absolute;
+    bottom: 1px;
+    right: 2px;
+    font-size: 0.7rem;
+    color: #666;
+    background-color: rgba(255,255,255,0.8);
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+.tree > .node > .children > .node {
+    position: relative;
+    margin-left: 15px; /* Reduced margin */
+}
